@@ -115,6 +115,9 @@ $(document).ready(function() {
                     }
                 });
 
+                // TODO Koh: adhoc Shiology special to skip image size change
+                return;
+
                 // Do nothing for same image
                 if (url === new_url) {
                     return;
