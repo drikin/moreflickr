@@ -14,15 +14,12 @@ $(document).ready(function() {
         }
         var paths = parser.pathname.split('/');
         var files = paths[2].split('_');
-        var exts  = files[2].split('.');
         var flickr = {url: url};
         flickr.protocol = parser.protocol;
         flickr.hostname = parser.hostname;
         flickr.serverid = paths[1];
         flickr.id = files[0];
         flickr.secret = files[1];
-        flickr.size = exts[0];
-        flickr.type = exts[1];
 
         return flickr;
     } // }}}
