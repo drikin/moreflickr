@@ -27,13 +27,12 @@ $(document).ready(function() {
     //Square, Large Square, Thumbnail, Small, Small 320, Medium, Medium 640, Medium 800, Large, Large 1600, Large 2048
     function getFlickrImageUrl(photo_id, size, callback) { // {{{
         $.getJSON(
-            "http://api.flickr.com/services/rest/",
+            "http://api.flickr.com/services/rest/?jsoncallback=?",
             {
                 method: "flickr.photos.getSizes",
                 api_key: API_KEY,
                 photo_id: photo_id,
-                format: "json",
-                nojsoncallback: 1
+                format: "json"
             }, function(data) {
                 if(data.stat == 'ok'){
                     $.each(data.sizes.size, function(i, item) {
@@ -53,13 +52,12 @@ $(document).ready(function() {
     // Get Exif
     function getFlickrExif(photo_id, callback) { // {{{
         $.getJSON(
-            "http://api.flickr.com/services/rest/",
+            "http://api.flickr.com/services/rest/?jsoncallback=?",
             {
                 method: "flickr.photos.getExif",
                 api_key: API_KEY,
                 photo_id: photo_id,
-                format: "json",
-                nojsoncallback: 1
+                format: "json"
             }, function(data) {
                 if(data.stat == 'ok'){
                     var f = {};
